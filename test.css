@@ -1,0 +1,181 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #222;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+}
+.cruds{
+    width: 83%;
+    margin: auto;
+}
+.head{
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+}
+input{
+    width: 100%;
+    height: 25px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #111;
+    color: #fff;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #fff;
+    background: #000;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+.price input{
+    width: 20%;
+    margin-right: 5px;
+}
+#total{
+    width: 20%;
+    height: 25px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: red;
+    color: #ffffff;
+}
+#total::before{
+    content: "Total: ";
+    color: #fff;
+    font-size: 10px;
+}
+button{
+    width: 100%;
+    height: 25px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: #251a1a06;
+    color: #fff;
+    cursor: pointer;
+    transition: background 3.3s;
+}
+button:hover{
+    background: #fff;
+    color: #000;
+    transform: scale(1.2);
+    transition: transform 0.2s;
+    letter-spacing: 2px;
+}
+#searchfield{
+    display: flex;
+    justify-content: space-between;
+}
+#searchfield button{
+    width: 45%;
+    margin-right: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+}
+#searchfield button:hover{
+    background-color: #666;
+    transition: background-color 0.3s;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: center;
+}
+table th, table td{
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #333;
+    color: #fff;
+}
+table th{
+    background: #444;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+#deleteALL{
+    width: 60%;
+    height: 25px;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 25px;
+    color: #d8c8c8;
+    cursor: pointer;
+    align-items: center;
+}
+#goTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  color: white;
+  border: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+#goTopBtn:hover {
+  background-color: #555;
+}
+#goTopBtn.loading {
+  position: relative;
+}
+#goTopBtn.loading::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid #00f;
+  animation: rotateRing 1s linear infinite;
+  -webkit-animation: rotateRing 1s linear infinite;
+}
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightLeft {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(25px); }
+  50%  { transform: translateX(50px); }
+  75%  { transform: translateX(75px); }
+  85%  { transform: translateX(0); }
+  100% { transform: translateX(100px); }
+}
+
+#goTopBtn.loading {
+  animation: slideRightLeft 1s ease-in-out;
+}
+
+
